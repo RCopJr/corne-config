@@ -9,6 +9,18 @@
 #include <dt-bindings/zmk/keys.h>
 
 / {
+    behaviors {
+        mtl: mtl {
+            compatible = "zmk,behavior-hold-tap";
+            label = "MTL";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <220>;
+            flavor = "tap-preferred";
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -21,10 +33,10 @@
 
             display-name = "Base";
             bindings = <
-&kp ESC    &kp Q        &kp W  &kp E  &kp R         &kp T                 &kp Y                &kp U      &kp I      &kp O    &kp P           &kp BSLH
-&kp TAB    &kp A        &kp S  &kp D  &kp F         &mt LEFT_COMMAND G    &mt RIGHT_COMMAND H  &kp J      &kp K      &kp L    &kp SEMI        &kp SQT
-&kp LSHFT  &mt LCTRL Z  &kp X  &kp C  &kp V         &kp B                 &kp N                &kp M      &kp COMMA  &kp DOT  &mt RCTRL FSLH  &kp RIGHT_SHIFT
-                               &mo 1  &kp LEFT_ALT  &kp BACKSPACE         &kp SPACE            &kp ENTER  &mo 2
+&kp ESC    &kp Q        &kp W  &kp E  &kp R         &kp T                  &kp Y                 &kp U      &kp I      &kp O    &kp P           &kp BSLH
+&kp TAB    &kp A        &kp S  &kp D  &kp F         &mtl LEFT_COMMAND G    &mtl RIGHT_COMMAND H  &kp J      &kp K      &kp L    &kp SEMI        &kp SQT
+&kp LSHFT  &mt LCTRL Z  &kp X  &kp C  &kp V         &kp B                  &kp N                 &kp M      &kp COMMA  &kp DOT  &mt RCTRL FSLH  &kp RIGHT_SHIFT
+                               &mo 1  &kp LEFT_ALT  &kp BACKSPACE          &kp SPACE             &kp ENTER  &mo 2
             >;
         };
 
@@ -37,9 +49,9 @@
 
             display-name = "Lower";
             bindings = <
-&none       &none         &none         &none         &none         &none               &none       &kp N7        &kp N8        &kp N9        &none   &none
-&bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &kp LEFT_COMMAND    &kp PERIOD  &kp NUMBER_4  &kp N5        &kp NUMBER_6  &none   &none
-&trans      &none         &none         &none         &none         &none               &kp N0      &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &trans  &none
+&none       &none         &none         &none         &none         &none               &none       &kp N7        &kp N8        &kp N9        &none  &none
+&bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &kp LEFT_COMMAND    &kp PERIOD  &kp NUMBER_4  &kp N5        &kp NUMBER_6  &none  &none
+&trans      &none         &none         &none         &none         &none               &kp N0      &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &none  &trans
                                         &trans        &trans        &trans              &trans      &trans        &trans
             >;
         };
@@ -53,10 +65,10 @@
 
             display-name = "Raise";
             bindings = <
-&kp PERCENT  &kp EXCL   &kp ASTERISK  &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp PIPE                      &none                         &none           &none         &none            &none  &none
-&kp GRAVE    &kp MINUS  &kp DOLLAR    &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &mt LEFT_COMMAND AMPERSAND    &mt RIGHT_COMMAND LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT_ARROW  &none  &none
-&trans       &kp HASH   &kp CARET     &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp EQUAL                     &none                         &none           &none         &none            &none  &none
-                                      &trans                &trans                 &trans                        &trans                        &trans          &trans
+&kp PERCENT  &kp EXCL   &kp ASTERISK  &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp PIPE                       &none                          &none           &none         &none            &none  &none
+&kp GRAVE    &kp MINUS  &kp DOLLAR    &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &mtl LEFT_COMMAND AMPERSAND    &mtl RIGHT_COMMAND LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT_ARROW  &none  &none
+&trans       &kp HASH   &kp CARET     &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp EQUAL                      &none                          &none           &none         &none            &none  &trans
+                                      &trans                &trans                 &trans                         &trans                         &trans          &trans
             >;
         };
 
