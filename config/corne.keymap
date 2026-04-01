@@ -67,7 +67,7 @@
             bindings = <
 &kp PERCENT  &kp EXCL   &kp ASTERISK  &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp PIPE                       &none                          &none           &none         &none            &none  &none
 &kp GRAVE    &kp MINUS  &kp DOLLAR    &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &mtl LEFT_COMMAND AMPERSAND    &mtl RIGHT_COMMAND LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT_ARROW  &none  &none
-&trans       &kp HASH   &kp CARET     &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp EQUAL                      &none                          &none           &none         &none            &none  &trans
+&kp AT       &kp HASH   &kp CARET     &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp EQUAL                      &none                          &none           &none         &none            &none  &trans
                                       &trans                &trans                 &trans                         &trans                         &trans          &trans
             >;
         };
